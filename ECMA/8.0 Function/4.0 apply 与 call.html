@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>标题</title>
+</head>
+<body>
+	<script>
+		
+		//	使用 call() 或者 apply() 来扩充作用域的最大好处,就是对象不需要与方法发生耦合(相互关联)
+		/*
+		function box(num1,num2){
+			return num1 + num2;
+		}
+		function sum(num1,num2){
+			//	apply 和 call 可以冒充另外一个函数
+			//	this 表示作用域  [] 表示传递的参数
+			return box.apply(this,[num1,num2]);
+		}
+		function sum2(num1,num2){
+			//		这个可以当作数组传递
+			return box.apply(this,arguments);
+		}
+		
+		alert(box(10,10));
+		alert(sum(10,10));
+		alert(sum2(10,10));*/
+		
+		function box(num1,num2){
+			return num1 + num2;
+		}
+		function sum(num1,num2){
+			//		call 只是传递参数不同   其他和apply一样
+			return box.call(this,num1,num2);
+		}
+//		alert(sum(10,10));
+		
+		var color = '红色的';
+		var box = {
+			color : '蓝色的'
+		};
+		function sayColor(){
+			alert(this.color);
+		}
+		sayColor();
+		//	用 call实现对象冒充  冒充window 下
+		sayColor.call(window);
+		//	this 就是 window
+		sayColor.call(this);
+		//	冒充 box 作用域就在 box 对象里面
+		sayColor.call(box);
+		
+		
+		
+	</script>
+</body>
+</html>

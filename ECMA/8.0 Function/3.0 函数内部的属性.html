@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>标题</title>
+</head>
+<body>
+	<script>
+		function box(num){
+			if(num <= 1){
+				return 1;
+			} else{
+				//	使用 arguments.callee 调用自身 实现递归
+				return num * arguments.callee(num-1)
+			}
+		}
+		// alert(box(4));
+		
+		// window 是一个对象 而且是js里面最大的对象 是最外围的对象
+		//	window 是对象 类型是对象  window 表示全局
+//		alert(typeof window);
+//		alert(this);
+//			this 就是 window
+//		alert(typeof this);
+		/*
+		//	这里的color 是全局变量 而这个变量又是 window 的属性
+		var color = '红色的';
+		alert(window.color);
+		alert(this.color);
+		//		相当于 var color = '红色的'
+		window.color = '红色的';
+		alert(this.color);*/
+		
+		/*
+		window.color = '红色的';
+		var box = {
+			//	这里的color是box下的属性 也就是局部变量
+			color : '蓝色的',
+			sayColor:function(){
+					//	这里的this确定代表的box对象
+				alert(this.color);
+			}
+		}
+		alert(this.color);
+		box.sayColor(); */
+		
+		
+		window.color = '红色的';
+		function sayColor(){
+			//	这里执行的时候是动态的 第一次是在window下  第二次是在box下
+			alert(this.color);
+		}
+		//	这里调用sayColor() 范围还是在window下
+		sayColor();
+		
+		var box = {
+			color : '蓝色的',
+		};
+		//	相当于把sayColor()函数赋值一份进去box对象中
+		box.sayColor=sayColor;
+		//	这里执行的是 box 里面的 this.color
+		box.sayColor();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</script>
+</body>
+</html>

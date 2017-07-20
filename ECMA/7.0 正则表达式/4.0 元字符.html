@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>标题</title>
+</head>
+<body>
+	<script>
+		
+		//		[a-z]  表示26个小写字母  任意一个都可以匹配
+		var pattern = /[a-z]oogle/;		
+		var str = 'google';
+		//alert(pattern.test(str));
+		
+//		[0-9]*  表示0次 一次 或者多次  
+		var pattern = /[0-9]*oogle/;		
+		var str = '444oogle';
+		//alert(pattern.test(str));
+		
+		// 匹配括号中的字符集中的任意字符
+		//[0-9] 表示至少一次匹配   因为匹配到的是oogle加上前面的一个字符
+		var pattern = /[0-9]oogle/;		
+		var str = '444oogle';
+		//alert(pattern.test(str));	
+		
+		//	表示匹配全部数字 大小写英文字母   （复合匹配）
+		var pattern = /[0-9a-zA-Z]oogle/;		
+		var str = 'BB4oogle';
+		//alert(pattern.test(str));
+		
+		// 匹配不在括号中的字符集中的任意字符
+		var pattern = /[^0-9]oogle/;		
+		var str = 'BBoogle';
+		//alert(pattern.test(str));
+		
+		//		匹配a-z 至少一个以上
+		var pattern = /[a-z]+/;		
+		var str = 'gg';
+		//alert(pattern.test(str));
+		
+		//	^ 符号是加在[]外面  代表首位匹配
+		//	^ 符号加在[]里面  代表非
+		var pattern = /^[a-z]oogle/;		
+		var str = 'eoogle';
+//		alert(pattern.test(str))
+		
+		//	+ 匹配一个或者多个 
+		var pattern = /^[a-z]+oogle/;		
+		var str = 'eoogle';
+//		alert(pattern.test(str))
+		
+		//	小写w 匹配数字和字符以及_
+		var pattern = /\woogle/;		
+		var str = '_oogle';
+//		alert(pattern.test(str))
+		
+		//大写W 代表除了匹配数字和字符以及_
+		var pattern = /\Woogle/;		
+		var str = '`oogle';
+//		alert(pattern.test(str))
+		
+		//	小写d  匹配数字
+		var pattern = /\doogle/;		
+		var str = '1oogle';
+//		alert(pattern.test(str))
+		
+		//	大写D   匹配非数字
+		var pattern = /\Doogle/;		
+		var str = '鸡oogle';
+//		alert(pattern.test(str))
+
+
+		//  锚字符
+		//		^ 	强制首匹配    $   强制尾匹配
+		var pattern = /^google$/;		
+		var str = 'google';
+		alert(pattern.test(str))
+
+		
+		
+		
+		
+		
+		
+		
+	</script>
+
+</body>
+</html>

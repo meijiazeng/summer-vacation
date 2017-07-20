@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>标题</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		function box(num,a){
+			return num +100;
+		}
+		function box(num){
+			return num + 200;
+		}
+//			第二个函数把第一个函数覆盖 所以第一个不会执行
+		
+		alert(box(20,1));
+		//	重载就是根据参数 选择相同函数名而参数不同的函数
+		//  js 没有重载 所以不会执行第一条函数
+		
+	</script>
+</body>
+</html>

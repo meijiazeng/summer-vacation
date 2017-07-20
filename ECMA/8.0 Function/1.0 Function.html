@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>标题</title>
+</head>
+<body>
+	<script>
+		
+		//	普通函数的声明方式
+		function box(num1,num2){
+			return num1 + num2;
+		}
+		alert(box(1,2));
+		
+		//使用变量初始化函数
+		var box = function(num1,num2){
+			return num1 + num2;
+		}
+		alert(box(1,2));
+		
+		//  使用new的构造函数来声明函数(不建议使用)
+		//		降低性能
+		var box = new Function('num1','num2','return num1 + num2');
+		alert(box(1,2));
+		alert(typeof box);
+	</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>标题</title>
+</head>
+<body>
+	<script>
+		//	创建一个日期对象
+		var box = new Date();
+//		alert(box);
+		
+		// 返回的是毫秒数
+		//alert(Date.parse('4/4/2017'));
+//		把毫秒转换为时间
+		var box = new Date(Date.parse('4/4/2017'));
+		//alert(box);
+
+		//	（第一种写法）默认自动后台调用Date.parse()
+		var box = new Date('3/3/2017');
+		//alert(box);
+		// (第二种写法 ) 
+		var box = new Date('May 25,2007');
+		//alert(box);
+		
+		// (第三种写法)
+		var box = new Date('Thu Apr 12 2007 22:22:22 GMT+0800');
+		//alert(box);
+		//alert(Date.parse())
+//			没有传入日期格式参数 就会返回NAN
+		
+		//	UTC 世界协调时间
+			
+		var box = new Date(Date.UTC(2007,10,15,17,22,45,15));
+		alert(box);
+		
+		// 按照自己时间
+		//	不加 UTC  返回本地时间
+		var box = new Date(2007,10,15,17,22,45,15);
+		alert(box);
+	</script>
+</body>
+</html>

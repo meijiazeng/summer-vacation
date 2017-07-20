@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>标题</title>
+</head>
+<body>
+	<script>
+		
+		//var box = new Object();
+		//box.name = 'William';	// 添加一个属性
+		//alert(box.name);
+		
+		//	基本类型不是引用类型 不可以添加属性
+		/*
+		var box = 'William';
+		box.age = 18;
+		alert(box.age);*/
+		
+		/*var box = 'William';
+		var box2 = box;
+		//	基本类型保持独立 box2 的修改不会影响到box
+		box2 = 'kkk';
+		alert(box2);
+		alert(box); */
+		
+		/*
+		var box = new Object();
+		box.name = 'William';
+		var box2 = box;
+		//	box 的值会被改变 因为他们指向同一个对象
+		box2.name = 'cham';
+		alert(box2.name);
+		alert(box.name); */
+		
+		/*
+		function box(num){		//按值传递
+			num += 10;
+			return num;
+		}
+		var num = 50;
+		alert(box(num));		
+		alert(num); */
+		
+		function box(obj){
+			//	下面将要传递一个引用类型的参数 但不是按照引用传递
+			obj.name = 'william';
+			//	所以JS 没有按引用传参的功能  切记 不能把传递引用参数当作按引用传参
+			var obj = new Object();
+			obj.name = 'kkk';
+		}
+		var obj = new Object();
+		box(obj);
+		alert(obj.name);
+		
+		
+		
+	</script>
+</body>
+</html>

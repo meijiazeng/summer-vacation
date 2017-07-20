@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>标题</title>
+</head>
+<body>
+	<script>
+		
+		//  UTC 与本地时间 相差 8 小时
+		
+		var box = new Date(2007,10,15,17,22,45,15);
+		//alert(box);
+		//alert('toString'+box.toString());
+		//		返回本地时间
+		//alert('toLocaleString' +box.toLocaleString());
+		//		返回毫秒数
+		//alert('valueOf' + box.valueOf());
+		
+		
+		var box = new Date(2007,10,15,17,22,45,15);
+			//只显示日期
+		alert(box.toDateString());
+		//	只显示时间
+		alert(box.toTimeString());
+		//		本地日期
+		alert(box.toLocaleDateString());
+		//	本地时间
+		alert(box.toLocaleTimeString());
+		//		UTC时间日期
+		alert(box.toUTCString());
+		
+	</script>
+</body>
+</html>

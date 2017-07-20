@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>标题</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		var box = {} == {};
+		//	false 比较的是他们的地址 每个新创建对象的引用地址不同
+		alert(box);
+		
+		var box1 ={};
+		var age = box1;
+		var box2 = age == box1; 
+		alert(box2);
+		//	true 引用地址一样 所以相等
+		
+		var a = '2' === 2
+		alert(a);
+		// false  值和类型都必须相等
+	</script>
+</body>
+</html>

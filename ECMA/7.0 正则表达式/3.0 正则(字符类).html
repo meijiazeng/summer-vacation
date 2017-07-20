@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>标题</title>
+</head>
+<body>
+	<script>
+		
+		//	点符号表示匹配除了换行符之外的任意字符
+		var pattern = /g..gle/;
+		var str = 'google';
+		//alert(pattern.test(str));
+		
+		
+		//	o* 表示可以有任意个o 但是不可以是其他的  其他的会错误
+		var pattern = /go*gle/;
+		var str = 'goooogle';		// var str = 'ggle'  正确		// var str = 'giogle' 错误
+		//alert(pattern.test(str));
+		
+		//	+ 至少要匹配一个o 如果少于一个也不行
+		var pattern = /go+gle/;
+		var str = 'google';	
+//		alert(pattern.test(str));
+		
+		//	o? 匹配一个 或者零个
+		var pattern = /go?gle/;
+		var str = 'google';	
+		//alert(pattern.test(str));
+		
+		//	.? 表示匹配一个或者零个的任意字符
+		var pattern = /g.?gle/;
+		var str = 'gogle';	
+//		alert(pattern.test(str));
+		
+		//	o{2,4}	表示匹配2到4次的o
+		var pattern = /go{2,4}gle/;
+		var str = 'google';	
+		//alert(pattern.test(str));
+		
+		//	o{3}	表示匹配 3
+		var pattern = /go{3}gle/;
+		var str = 'gooogle';	
+//		alert(pattern.test(str));
+		
+		//	o{3,}	表示匹配 3次或者以上
+		var pattern = /go{3,}gle/;
+		var str = 'gooogle';	
+		alert(pattern.test(str));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</script>
+</body>
+</html>

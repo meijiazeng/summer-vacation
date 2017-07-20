@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>标题</title>
+</head>
+<body>
+	<script>
+		
+		// 使用字符串的正则表达式方法
+		//		g  全局匹配
+		
+		// match 方法匹配
+		var pattern = /Box/ig;
+		var str = 'This is a box!That is a box!';
+		//	将所有匹配的字符串组合成数组返回
+		//alert(str.match(pattern));
+		
+		//  search 查找方法
+		//	查到一个就返回 没必要使用g 全局
+		var pattern = /Box/i;
+		var str = 'This is a box!That is a box!';
+		//	返回第一个匹配的位置
+		//	找不到返回-1
+		//alert(str.search(pattern));
+		
+		
+		//  replace 替换 方法
+		var pattern = /Box/ig;
+		var str = 'This is a box!That is a box!';
+		//		返回替换后的字符串 所有匹配都会被替换
+		//alert(str.replace(pattern,'Tom'));
+		
+		var pattern = /!/ig;
+		var str = 'This is a box!That is a box!';
+		//		返回替换后的字符串 所有匹配都会被替换
+		//alert(str.split(pattern));
+		
+		
+		//		静态属性
+		var pattern = /g(o)ogle/i;
+		var str = 'This is a google!';
+		// 必须执行一下 静态属性才有效
+		pattern.test(str);	
+		//		当前被匹配的字符串
+		//alert(RegExp['$_']);
+		alert(RegExp.input);
+		
+		// 		最后一次匹配前的字符串
+		//alert(RegExp['$&']);
+		alert(RegExp.leftContext);
+		
+		// 		最后一次匹配后的字符串	
+		alert(RegExp['$'']);
+//		alert(RegExp.rightContext);
+		
+		//		最后一个匹配字符串
+//		alert(RegExp['$`']);
+		alert(RegExp.lastMatch);
+		
+		//		最后一对圆括号内的匹配字符串
+//		alert(RegExp['$+']);
+		alert(RegExp.lastParen);
+		
+		//		用于指定是否所有的表达式都用于多行的布尔值
+		//alert(RegExp.multiline);
+		
+		//	RegExp的实例属性
+		var pattern = /google/i;
+		//	是否全局
+		alert(pattern.global);
+		//		是否忽略大小写
+		alert(pattern.ignoreCase);
+		//	是否支持换行
+		alert(pattern.multiline);
+		//	下次的匹配位置
+		alert(pattern.lastIndex);
+		//	正则表达式的源字符串
+		alert(patter.source);
+	</script>
+</body>
+</html>

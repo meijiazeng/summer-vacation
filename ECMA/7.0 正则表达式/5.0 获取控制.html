@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>标题</title>
+</head>
+<body>
+	<script>
+		
+		//	直接使用空格匹配
+		var pattern = /goo gle/;
+		var str = 'goo gle';
+//		alert(pattern.test(str));
+		
+		//	\s空格匹配
+		var pattern = /goo\sgle/;
+		var str = 'goo gle';
+//		alert(pattern.test(str));
+		
+		//	\b 匹配到达边界
+		var pattern = /google\b/;
+		var str = 'google';
+//		alert(pattern.test(str));
+		
+		// |  表示匹配或选择模式
+		var pattern = /google|baidu|bing/;
+		var str = 'googlebaidu';		// 匹配概念 不是相等
+//		alert(pattern.test(str));
+		
+		//	匹配e 4到8 次
+		var pattern = /google{4,8}/;
+		var str = 'googleeee';		
+//		alert(pattern.test(str));
+		
+		//  分组匹配
+		//	匹配 google 4到8次
+		var pattern = /(google){4,8}/;
+		var str = 'googlegooglegooglegoogle';		
+//		alert(pattern.test(str));
+		
+		//	RegExp.$1 表示获取模式中第一个分组对应的匹配字符串
+		var pattern = /8(.*)8/;
+		var str = 'google8shabi8google';		
+		(pattern.test(str));
+//		alert(RegExp.$1);
+		
+		var pattern = /8(.*)8/;
+		var str = 'this is a 8google8';		
+		//	$1 表示分组获取字符串匹配到的内容
+//		document.write(str.replace(pattern,'<strong>$1</strong>'));
+		
+		var pattern = /(.*)\s(.*)/;
+		var str = 'google baidu';	
+		//	位置交换
+//		alert(str.replace(pattern,'$2 $1'));
+		
+		//		贪婪模式
+		var pattern = /[a-z]+/
+		var str = 'abcdefg'
+		//	所有的字符串变成1
+		//alert(str.replace(pattern,'1'));
+		
+		//	惰性模式
+		var pattern = /[a-z]/
+		var str = 'abcdefg'
+		//	所有的字符串变成1
+//		alert(str.replace(pattern,'1'));
+		
+		//	开启全局   并且使用惰性模式 每一个字母替换成了1
+		var pattern = /[a-z]+?/g
+		var str = 'abcdefg'
+		//	所有的字符串变成1
+//		alert(str.replace(pattern,'1'));
+		
+		//		使用了贪婪
+		var pattern = /8(.*)8/;
+		//	匹配到了 8google8 8google8 8google
+		var str = '8google8 8google8 8google8';
+//		document.write(str.replace(pattern,'<strong>$1</strong>'));
+		
+		//		使用了惰性  开启全局
+		var pattern = /8(.*?)8/g;
+		//	匹配到了 8google8 8google8 8google
+		var str = '8google8 8google8 8google8';
+//		document.write(str.replace(pattern,'<strong>$1</strong>'));
+		
+			//		另一种惰性
+			//	屏蔽了8 的匹配 也就是两边包含字符
+		var pattern = /8([^8]*)8/g;
+		var str = '8google8 8google8 8google8';
+		document.write(str.replace(pattern,'<strong>$1</strong>'));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</script>
+</body>
+</html>

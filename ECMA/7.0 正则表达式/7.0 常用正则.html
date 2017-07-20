@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>标题</title>
+</head>
+<body>
+	<script>
+		
+		//	检查邮政编码
+		var pattern = /[1-9][0-9]{5}/;
+		//	规则:必须是六位  必须是数字  第一位不能为0
+		var str = 'This is 522500!';
+//		alert(pattern.test(str));
+		
+		//	检查文件压缩包
+		//	从首开始匹配  然后后面要加上  - 符号 之后再加上.符号最后加上后缀名
+		var pattern = /^[\w\-]+\.(zip|gz|rar)/;		// | 选择符必须用分组符号包含起来
+		//	规则 : 文件名 : 字母_数字.zip.gz.rar
+		var str = '1sa-23.zip';
+//		alert(pattern.test(str));
+		
+		//	删除多余空格
+		var pattern = /\s/g;
+		var str = '111 222 333 444'
+//		alert(str.replace(pattern,''));
+		
+		//	删除首位空格 (第一个方法)
+		//	匹配头部
+		var pattern = /^\s+/;
+		var str = '			goo  gle		';
+		var result = str.replace(pattern,'');
+		//	匹配尾部
+		pattern = /\s+$/;
+		result = result.replace(pattern,'');
+//		alert('|' + result + '|');
+
+		//  第二种方法
+		var pattern = /^\s+(.+?)\s+$/;		// (.+) 是贪婪模式 惰性模式
+		var str = '     goo    gle   ';
+		var result = str.replace(pattern,'$1');
+//		alert('|' + result + '|');
+
+		//	验证电子邮件
+		var pattern = /^([\w\.\-]+)@([\w\-]+)\.([a-zA-Z]{2,4})$/;
+		var str = '731867490@qq.com';
+		alert(pattern.test(str));
+		
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>

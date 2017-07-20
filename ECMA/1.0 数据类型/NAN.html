@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>标题</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		var box = 0/0;
+		// 数学中第一个可以为0 第二个不能为0
+		alert(box);
+		// 返回NAN
+		
+		alert(isNaN(box));
+		// 判断是否 不是一个数字
+		alert(isNaN('25'));
+		//	字符串数值 可以转换为数值
+		alert(isNaN(true));
+		//	可以转换为1
+		
+		
+		//	如果对象的toString方法能够返回数值 那么就不是NaN了
+		var box = {
+			toString:function(){
+				return 123;
+				//	return '1230';
+				//	true 因为返回的是一个数值
+				return '美丽';
+				//	false 
+			}
+		};
+		alert(isNaN(box));
+		
+		
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>标题</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		// 无参数
+		function box1(){
+			// return 表示把这句话字符串返回回来
+			return '我只有被调用才可以执行';
+		}
+		//	调用
+		alert(box1());
+		
+		// 有参数
+		function box2(name,age){
+			return('你的姓名是：' + name +"你的年龄是：" + age);
+		}
+		alert(box2('美丽,',18));
+		
+		function box3(){
+			return 10;
+			return 100;
+			//  当一个函数遇到第一个return 就会终止函数继续往下执行
+		}
+		alert(box3());
+		
+		
+		
+	</script>
+</body>
+</html>

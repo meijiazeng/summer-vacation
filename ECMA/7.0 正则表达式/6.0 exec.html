@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>标题</title>
+</head>
+<body>
+	<script>
+		
+		//  分组返回
+		var pattern = /^[a-z]+\s[0-9]{4}$/;
+		var str = 'google 2012';
+		//	返回一个包含字符串的数组
+//		alert(pattern.exec(str));
+		
+		var pattern = /^[a-z]+/;
+		var str = 'google 2012';
+		//	返回一个包含只有字母的数组
+//		alert(pattern.exec(str));
+		
+		var pattern = /^([a-z]+)\s([0-9]{4})$/;
+		var str = 'google 2012';
+		var a =(pattern.exec(str));
+		//alert(a[0]);		// 返回匹配到的整个字符串
+		//alert(a[1]);		// 返回匹配到的第一个分组的字符串
+		//alert(a[2]);		// 返回匹配到的第二个分组的字符串
+		
+		//		整个叫做捕获性分组 所有的分组都捕获返回
+		var pattern = /(\d+)([a-z])/
+		var str ='123abc';
+//		var a =alert(pattern.exec(str));
+//		alert(a[0]);
+//		alert(a[1]);
+//		alert(a[2]);
+		
+		//	非捕获性分组  只要在不需要捕获返回的分组上加上 ?:
+		var pattern = /(\d+)(?:[a-z])/
+		var str ='123abc';
+//		alert(pattern.exec(str));
+		
+		//	嵌套分组 从外往内获取
+		var pattern = /(a?(b?(c?)))/;
+		var str = 'abc';
+		//alert(pattern.exec(str));
+		// 第一步： a[0]	匹配到整个字符串abc
+		// 第二步： a[1]	匹配第一个分组 (a?(b?(c?)))  ,abc
+		// 第三步： a[2]	匹配到第二个分组  (b?(c?))  ,bc
+		// 第三步： a[3]	匹配到第三个分组 (c?)  ,c
+		
+		//	使用前瞻捕获
+		//	goo后面必须是gle才能返回goo 注意 返回的是 goo  不是google
+		//		如果匹配不一致  返回null
+		var pattern = /goo(?=gle)/; 
+		var str = 'googge';
+//		alert(pattern.exec(str));
+		
+		//		用 \ 符号来转义正则里的特殊字符  才能匹配
+		var pattern = /\[/;
+		var str = '[';
+//		alert(pattern.test(str));
+		
+		//  m 开启换行模式  可以换行
+		var pattern = /^\d+/gm;
+		var str = '1. baidu\n2. google\n3. bing'  
+		alert(str.replace(pattern,'#'));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</script>
+</body>
+</html>

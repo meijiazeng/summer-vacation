@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>标题</title>
+</head>
+<body>
+	<script>
+		
+		var box = new Date(2007,10,15,17,22,45,15);
+		box.setTime(100);
+		//alert(box.getTime());
+		//	获取年份
+		//alert(box.getFullYear());
+		//alert(box.getMonth());
+		
+		var box = new Date();
+		//		获取月份 +1 才是当前月份
+		//alert(box.getMonth()+1);
+		
+		alert(box.getFullYear() +'年' + (box.getMonth()+1) + '月' + box.getDate() + '日' +
+		 box.getHours() + '时' + box.getMinutes() + '分' + box.getSeconds()) + '秒';
+		
+	</script>
+</body>
+</html>

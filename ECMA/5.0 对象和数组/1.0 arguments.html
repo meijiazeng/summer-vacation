@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>标题</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		function box(){
+			return arguments[0] + '|' +arguments[1] + '|' + arguments[2] +arguments[3];
+			//			不存在的参数会返回 undefined
+		}
+		
+		alert(box('William',28));
+		
+		function box1(){
+			return arguments.length;
+		}
+		alert(box1('sw',2));
+		
+		//  在不确定参数个数多少的时候  可以使用 arguments.length
+		function box2(){
+			var sum = 0;
+			for(var i=0;i<arguments.length;i++){
+				sum+=arguments[i];
+			}
+			return sum;
+		}
+		alert(box2(1,2));
+	</script>
+</body>
+</html>

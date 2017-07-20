@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>标题</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		//	对象包含哪些元素
+		// 1 属性（字段）
+		// 2 方法 （函数）
+		
+		// 创建一个对象
+//		var box = Object()
+//		new  关键字可以省略
+		var box = new Object();
+		box.name = 'William cham';
+		box.age = 18;
+		//alert(box.name);
+		//alert(box.age);
+		
+		
+		var box = {};
+		//	字面量创建对象
+		//alert(typeof box);
+		
+		// 字面量对象封装数据
+		//	属性可以用引号括起来
+		var box = {
+			name : 'William',
+			age : 18,
+		}
+		//	1. 点的方式 获取属性值
+		//alert(box.name + box.age);
+		//	2. 括号的方式获取属性值
+		//alert(box["name"] + box['age']);
+		
+		
+		var box = {
+			name : 'william',
+			age :18,
+			run:function(){				// 匿名函数
+				return '123';
+			}
+		};
+		//alert(box.run());
+		
+		var box = {
+			name : 'william'
+		}
+		alert(box.name);
+		delete(box.name);  			//  删除属性
+		alert(box.name);
+		
+		
+		
+		
+		
+	</script>
+</body>
+</html>

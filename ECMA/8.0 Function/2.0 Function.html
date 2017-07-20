@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>标题</title>
+</head>
+<body>
+	<script>
+		/*
+		function box(sum,num){
+			return sum + num;
+		}
+		function sum(num){
+			return num + 10;
+		}
+		var result = box(sum(10),10)*/
+		//  sum(10)这里传递的是函数的返回值
+//		alert(result);
+		
+		function box(sum,num){
+			return sum(num);
+		}
+		function sum(num){
+			return num + 10;
+		}
+		//	这里的sun是一个函数,当作参数传递到另外一个函数里
+		var result = box(sum,10);
+		alert(result);
+		
+		
+		
+		
+	</script>
+</body>
+</html>
